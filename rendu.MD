@@ -652,7 +652,8 @@ db.grades.aggregate([
 
 
 ### Question 4 | { $unwind: chemin }
-{ $unwind: chemin} : chemin indique un champ, éventuellement dans un document imbriqué (via la syntaxe commençant avec $). Ce champ contient un tableau. L'opérateur produit un document pour chaque élément du tableau. Les documents produits sont identique au document de départ, sauf pour le champ désigné qui, au lieu du tableau, contient un élément de ce tableau.
+
+{$unwind: chemin} : chemin indique un champ, éventuellement dans un document imbriqué (via la syntaxe commençant avec $). Ce champ contient un tableau. L'opérateur produit un document pour chaque élément du tableau. Les documents produits sont identique au document de départ, sauf pour le champ désigné qui, au lieu du tableau, contient un élément de ce tableau.
 
 Dans la collection grades, produire un document pour chaque élément du tableau contenu dans le champ scores (1241 résultats).
 
@@ -707,7 +708,7 @@ db.grades.aggregate([
 
 
 ### Question 5 | { $group: { _id: spec id, champ1: { agg1: expr1 }, ...} }
-{ $group: { _id: spec id, champ1: { agg1: expr1 }, ...} } (doc): regroupe les documents selon la valeur spec id, qui est une expression utilisant la syntaxe des expressions d'agrégation (chemins avec $, opérateurs d'expressions, etc). On peut fabriquer des documents, ce qui permet de représenter des n-uplets pour utiliser des combinaisons de valeurs comme clés. Pour chaque groupe, produit un document avec la valeur de _id, ainsi que chaque champ supplémentaire (champ1, etc) avec la valeur calculée par l'opérateur d'agrégation correspondant (agg1, etc) à qui on aura passé le tableau des valeurs calculées par les expressions (expr1, etc). Les fonctions d'agrégation utilisables sont indiquées dans la documentation. Par exemple { $group: { _id: "$state", total: { $sum: "$pop" }}} va créer un document pour chaque valeur du champ state avec un champ total qui sera la somme des champs pop des documents du groupe.
+{$group: { _id: spec id, champ1: { agg1: expr1 },...}} (doc): regroupe les documents selon la valeur spec id, qui est une expression utilisant la syntaxe des expressions d'agrégation (chemins avec $, opérateurs d'expressions, etc). On peut fabriquer des documents, ce qui permet de représenter des n-uplets pour utiliser des combinaisons de valeurs comme clés. Pour chaque groupe, produit un document avec la valeur de _id, ainsi que chaque champ supplémentaire (champ1, etc) avec la valeur calculée par l'opérateur d'agrégation correspondant (agg1, etc) à qui on aura passé le tableau des valeurs calculées par les expressions (expr1, etc). Les fonctions d'agrégation utilisables sont indiquées dans la documentation. Par exemple { $group: { _id: "$state", total: { $sum: "$pop" }}} va créer un document pour chaque valeur du champ state avec un champ total qui sera la somme des champs pop des documents du groupe.
 
 Dans la collection zips, donner pour chaque ville la population minimale (16584 résultats).
 
