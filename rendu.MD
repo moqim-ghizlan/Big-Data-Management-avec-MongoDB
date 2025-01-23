@@ -651,7 +651,7 @@ db.grades.aggregate([
 ```
 
 
-### Question 4 | { $unwind: chemin}
+### Question 4 | { $unwind: chemin }
 { $unwind: chemin} : chemin indique un champ, éventuellement dans un document imbriqué (via la syntaxe commençant avec $). Ce champ contient un tableau. L'opérateur produit un document pour chaque élément du tableau. Les documents produits sont identique au document de départ, sauf pour le champ désigné qui, au lieu du tableau, contient un élément de ce tableau.
 
 Dans la collection grades, produire un document pour chaque élément du tableau contenu dans le champ scores (1241 résultats).
