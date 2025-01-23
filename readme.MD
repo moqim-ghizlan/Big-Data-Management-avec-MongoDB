@@ -19,7 +19,7 @@ Ce projet illustre l'utilisation de MongoDB pour la gestion et l'analyse de gran
 ### Étape 1 : Cloner le Répertoire
 Clonez le dépôt et accédez au répertoire :
 ```bash
-git clone <url-du-dépôt>
+git clone https://github.com/moqim-ghizlan/Big-Data-Management-avec-MongoDB.git
 cd big_data_management_nosql
 ```
 
