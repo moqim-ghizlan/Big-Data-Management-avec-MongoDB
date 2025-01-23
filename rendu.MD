@@ -34,7 +34,7 @@ Pour chacune des collections grades et zip, récupérer un document, puis en dé
 db.grades.findOne()
 ```
 
-```json
+```js
 //Résultat
 {
   _id: ObjectId('50b59cd75bed76f46522c34e'),
@@ -71,7 +71,7 @@ db.grades.findOne()
 db.zips.findOne()
 ```
 
-```json
+```js
 //Résultat
 {
     _id: '01001',
@@ -86,12 +86,12 @@ db.zips.findOne()
 ```
 
 
-```json
+```js
 //Question
 En déduire un type pour les éléments de cette collection.
 ```
 
-```json
+```js
 //Reponse
 On déduit que les éléments de la collection grades sont de type document imbriqué, tandis que les éléments de la collection zip sont de type document simple.
 ```
@@ -110,7 +110,7 @@ Récupérer quelques documents de grades et vérifier qu'ils sont conformes au t
 db.grades.find().limit(1)
 ```
 
-```json
+```js
 //Résultat
 {
   _id: ObjectId('50b59cd75bed76f46522c34e'),
@@ -152,7 +152,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 {
   _id: ObjectId('50b59cd75bed76f46522c34e'),
@@ -196,7 +196,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 10
 ```
@@ -218,7 +218,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 280
 ```
@@ -226,12 +226,12 @@ db.grades.find(
 
 
 
-```json
+```js
 // Question
 Vérifier qu'ils sont conformes au type de la question précédente
 ```
 
-```json
+```js
 // Reponse
 On trouve que la structure des documents de la collection grades est conforme au type déduit précédemment.
 ```
@@ -258,7 +258,7 @@ db.grades.countDocuments(
 
 ```
 
-```json
+```js
 //Résultat
 280
 ```
@@ -283,7 +283,7 @@ db.grades.find(
 ).count()
 ```
 
-```json
+```js
 //Résultat
 7
 ```
@@ -311,14 +311,14 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 188
 ```
 
 
 ### Question 6 | db.collection.find({ $expr: { arbre de syntaxe de l'expression en
-db.collection.find({ \$expr: { arbre de syntaxe de l'expression en json} } ): exprime une condition générique. La syntaxe est la représentation en json de l'expression (doc). Les champs sont représentés par la syntaxe $champ ou \$champ1.souschamp2. Les arguments sont souvent donnés sous forme d'une liste (mais il faut vérifier la documentation de chaque opérateur). Par exemple, { \$lte: [ "\$class_id", 20 ] } est une expression indiquant que le champ class_id (via "\$class_id") est inférieur (\$lte) à 20.
+db.collection.find({ \$expr: { arbre de syntaxe de l'expression en js} } ): exprime une condition générique. La syntaxe est la représentation en js de l'expression (doc). Les champs sont représentés par la syntaxe $champ ou \$champ1.souschamp2. Les arguments sont souvent donnés sous forme d'une liste (mais il faut vérifier la documentation de chaque opérateur). Par exemple, { \$lte: [ "\$class_id", 20 ] } est une expression indiquant que le champ class_id (via "\$class_id") est inférieur (\$lte) à 20.
 
 Récupérer les documents pour lesquels le student_id est supérieur ou égal au class_id (188 résultats).
 
@@ -338,7 +338,7 @@ db.grades.find(
 ```
 
 
-```json
+```js
 //Résultat
 188
 ```
@@ -363,7 +363,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 100
 ```
@@ -384,7 +384,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 100
 ```
@@ -412,7 +412,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 {
   scores: [
@@ -457,7 +457,7 @@ db.grades.find(
 
 ```
 
-```json
+```js
 //Résultat
 280
 ```
@@ -495,7 +495,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   scores: [
@@ -529,7 +529,7 @@ db.zips.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   _id: '01001',
@@ -559,7 +559,7 @@ db.zips.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   total_documents: 7634
@@ -589,7 +589,7 @@ db.grades.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   _id: ObjectId('50b59cd75bed76f46522c370'),
@@ -642,7 +642,7 @@ db.grades.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   total_documents: 280
@@ -669,7 +669,7 @@ db.grades.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   _id: ObjectId('50b59cd75bed76f46522c34e'),
@@ -697,7 +697,7 @@ db.grades.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   total_documents: 1241
@@ -728,7 +728,7 @@ db.zips.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   _id: 'CARLTON',
@@ -754,7 +754,7 @@ db.zips.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 
 {
@@ -785,7 +785,7 @@ db.grades.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 {
   _id: ObjectId('50b59cd75bed76f46522c34e'),
@@ -881,20 +881,20 @@ db.grades.aggregate([
 ```
 
 
-```json
+```js
 //Résultat
 
 {
   total_documents: 280
 }
 ```
-```json
+```js
 //Question
 Quel est le type du résultat ?
 ```
 
 
-```json
+```js
 //Reponse
 Le résultat est un ensemble de documents MongoDB enrichis provenant de la collection grades. Chaque document comprend un champ supplémentaire appelé matched_zips, qui contient un tableau de documents de la collection zips correspondant à la condition de jointure. Si aucune correspondance n'est trouvée, le tableau matched_zips reste vide, mais les documents originaux de grades demeurent inchangés
 ```
@@ -928,7 +928,7 @@ db.grades.aggregate([
 ])
 ```
 
-```json
+```js
 //Résultat
 {
   _id: 'homework',
@@ -957,7 +957,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_types: 3
@@ -987,7 +987,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 [
     {
@@ -1022,7 +1022,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_classes: 31
@@ -1052,7 +1052,7 @@ db.zips.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 [
     {
@@ -1092,7 +1092,7 @@ db.zips.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_cities: 16584
@@ -1120,7 +1120,7 @@ db.zips.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 [
     {
@@ -1158,7 +1158,7 @@ db.zips.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_states: 51
@@ -1189,7 +1189,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 [
     {
@@ -1256,7 +1256,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_states: 31
@@ -1304,7 +1304,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 [
     {
@@ -1364,7 +1364,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_states: 280
@@ -1413,7 +1413,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 [
     {
@@ -1482,7 +1482,7 @@ db.grades.aggregate([
 
 ```
 
-```json
+```js
 //Résultat
 {
   total_classes: 31
